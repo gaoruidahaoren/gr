@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>电表识别与Excel计算</title>
+  <style>
+    :root {
+      --bg: #f2f5f9;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --brand: #0f766e;
+      --brand-hover: #115e59;
+      --danger: #b91c1c;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, #d9f2ef 0, transparent 30%),
+        radial-gradient(circle at 80% 0%, #dce8ff 0, transparent 35%),
+        var(--bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: min(880px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 40px rgba(17, 24, 39, 0.08);
+      overflow: hidden;
+    }
+    .head {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, #f0fdfa, #f8fafc 65%);
+    }
+    .head h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+    .head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .body {
+      padding: 24px;
+      display: grid;
+      gap: 18px;
+    }
+    .row {
+      display: grid;
+      gap: 10px;
+    }
+    label {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    input[type="text"], input[type="file"] {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 14px;
+      background: #fff;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .primary {
+      background: var(--brand);
+      color: #fff;
+    }
+    .primary:hover { background: var(--brand-hover); }
+    .secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    .secondary:hover { background: #d1d5db; }
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .log {
+      min-height: 44px;
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: #fafafa;
+      font-size: 14px;
+      color: #111827;
+      white-space: pre-wrap;
+    }
+    .error { color: var(--danger); }
+    .ok { color: #065f46; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="head">
+      <h1>电表图片识别与用电Excel生成</h1>
+      <p>上传电表照片，自动识别、计算并下载Excel。</p>
+    </section>
+
+    <section class="body">
+      <div class="row">
+        <label for="model">模型名称</label>
+        <input id="model" type="text" value="qwen-vl-max-latest" placeholder="例如 qwen-vl-max-latest" />
+      </div>
+
+      <div class="row">
+        <label for="meterDate">电表日期</label>
+        <input id="meterDate" type="date" />
+      </div>
+
+      <div class="row">
+        <label for="files">上传电表图片（可多选）</label>
+        <input id="files" type="file" accept="image/*" multiple />
+        <div id="fileInfo" class="hint">未选择文件</div>
+      </div>
+
+      <div class="row">
+        <label for="previousExcel">可选：上传昨天的Excel</label>
+        <input id="previousExcel" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+      </div>
+
+      <div class="actions">
+        <button id="submitBtn" class="primary">开始识别并生成Excel</button>
+        <button id="healthBtn" class="secondary" type="button">检查服务状态</button>
+      </div>
+
+      <div class="hint">
+        计算规则：本次上传按所选“电表日期”入库；上传历史Excel后自动按相邻两天计算差值并保留旧数据。
+      </div>
+
+      <div id="log" class="log">等待操作...</div>
+      <div id="ver" class="hint"></div>
+    </section>
+  </main>
+
+  <script>
+    const submitBtn = document.getElementById('submitBtn');
+    const healthBtn = document.getElementById('healthBtn');
+    const filesInput = document.getElementById('files');
+    const previousExcelInput = document.getElementById('previousExcel');
+    const modelInput = document.getElementById('model');
+    const meterDateInput = document.getElementById('meterDate');
+    const logEl = document.getElementById('log');
+    const fileInfo = document.getElementById('fileInfo');
+    const verEl = document.getElementById('ver');
+
+    function setLog(msg, cls = '') {
+      logEl.className = 'log' + (cls ? ' ' + cls : '');
+      logEl.textContent = msg;
+    }
+
+    filesInput.addEventListener('change', () => {
+      const files = Array.from(filesInput.files || []);
+      if (!files.length) {
+        fileInfo.textContent = '未选择文件';
+        return;
+      }
+      fileInfo.textContent = `已选择 ${files.length} 个文件：` + files.map(f => f.name).join('，');
+    });
+
+    (async () => {
+      try {
+        const resp = await fetch('/version');
+        if (!resp.ok) return;
+        const data = await resp.json();
+        verEl.textContent = `版本: ${data.build || '-'} (${data.mode || '-'})`;
+      } catch (_) {}
+    })();
+
+    (() => {
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      meterDateInput.value = `${yyyy}-${mm}-${dd}`;
+    })();
+
+    healthBtn.addEventListener('click', async () => {
+      setLog('正在检查服务状态...');
+      try {
+        const resp = await fetch('/health');
+        const data = await resp.json();
+        setLog('服务状态: ' + JSON.stringify(data), 'ok');
+      } catch (e) {
+        setLog('健康检查失败: ' + (e.message || e), 'error');
+      }
+    });
+
+    submitBtn.addEventListener('click', async () => {
+      const files = Array.from(filesInput.files || []);
+      if (!files.length) {
+        setLog('请先上传至少一张图片。', 'error');
+        return;
+      }
+
+      const form = new FormData();
+      form.append('model', modelInput.value.trim() || 'qwen-vl-max-latest');
+      if (meterDateInput.value) {
+        form.append('meter_date', meterDateInput.value);
+      }
+      if (previousExcelInput.files && previousExcelInput.files[0]) {
+        form.append('previous_excel', previousExcelInput.files[0]);
+      }
+      files.forEach(f => form.append('files', f));
+
+      submitBtn.disabled = true;
+      setLog('正在上传并调用模型识别，请稍候...');
+
+      try {
+        const resp = await fetch('/process', { method: 'POST', body: form });
+        if (!resp.ok) {
+          let msg = `请求失败: HTTP ${resp.status}`;
+          try {
+            const err = await resp.json();
+            if (err && err.detail) msg += `\n${err.detail}`;
+          } catch (_) {}
+          throw new Error(msg);
+        }
+
+        const blob = await resp.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const ts = new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-');
+        a.href = url;
+        a.download = `meter_result_${ts}.xlsx`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+
+        setLog('Excel 已生成并开始下载。', 'ok');
+      } catch (e) {
+        setLog('处理失败:\n' + (e.message || e), 'error');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+.venv312/
+
+# Secrets
+.env
+.env.*
+
+# IDE
+.idea/
+
+# PyInstaller
+build/
+dist/
+*.spec
