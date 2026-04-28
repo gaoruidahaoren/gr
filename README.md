@@ -22,10 +22,22 @@ uvicorn src.app:app --host 0.0.0.0 --port 8000
 
 访问：`http://127.0.0.1:8000/`
 
-## Windows 直接运行（不打包）
-在 Windows 上双击：`run_windows.bat`
+## Windows 用户使用方式（推荐）
 
-## Windows 打包成 EXE（推荐分发）
+Windows 普通用户不要运行 `run_windows.bat`，因为它需要本机先安装 Python。
+
+建议直接下载发布好的 exe：
+
+1. 打开 GitHub 项目的 `Releases`
+2. 下载 `MeterExcelApp-Windows.zip` 或 `MeterExcelApp.exe`
+3. 解压后双击 `MeterExcelApp.exe`
+
+这样对方电脑不需要安装 Python，只需要能正常联网即可。
+
+## Windows 源码运行（开发者用）
+如果你是开发者，且本机已经安装 Python 3.12+，可以在 Windows 上双击：`run_windows.bat`
+
+## Windows 打包成 EXE
 
 ### 1) 在 Windows 构建
 > 建议在目标 Windows 环境构建，避免跨平台打包问题。
@@ -34,11 +46,28 @@ uvicorn src.app:app --host 0.0.0.0 --port 8000
 
 生成文件：`dist\MeterExcelApp.exe`
 
-### 2) 分发给别人
-你可以把以下文件打包发给别人：
+### 2) 发布给别人
+建议不要直接让别人下载源码后运行 `run_windows.bat`，而是发布以下文件：
 - `dist\MeterExcelApp.exe`
+- `dist\MeterExcelApp-Windows.zip`
 
 对方双击 `MeterExcelApp.exe` 后会自动打开浏览器页面，上传电表图片并下载 Excel。
+
+### 3) 使用 GitHub Actions 自动发布
+本项目已配置 GitHub Actions 自动构建 Windows 版 exe：
+
+1. 推送普通代码到 `main` 或 `master` 时，会自动构建并生成 Actions artifact
+2. 推送版本 tag（例如 `v1.0.0`）时，会自动：
+   - 构建 `MeterExcelApp.exe`
+   - 打包 `MeterExcelApp-Windows.zip`
+   - 上传到当前版本的 GitHub Release
+
+示例命令：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
 
 ## API调用示例
 ```bash
