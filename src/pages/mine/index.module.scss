@@ -1,0 +1,123 @@
+@use '@/styles/variables.scss' as *;
+
+.minePage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $page-padding;
+}
+
+.userCard {
+  width: 100%;
+  height: 160rpx;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  border-radius: $radius-lg;
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  margin-bottom: 32rpx;
+  box-shadow: $shadow-card;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: $color-bg-card;
+  margin-right: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  border: 3rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.nickname {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+  margin-bottom: 8rpx;
+}
+
+.userStats {
+  display: flex;
+  gap: 24rpx;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-white;
+}
+
+.statLabel {
+  font-size: $font-size-xs;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.menuList {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  border-bottom: 1rpx solid $color-divider;
+  transition: all $transition-base;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:active {
+    opacity: 0.9;
+    background: $color-bg-hover;
+  }
+}
+
+.menuIcon {
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  margin-right: 24rpx;
+}
+
+.menuContent {
+  flex: 1;
+}
+
+.menuTitle {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.menuArrow {
+  font-size: 24rpx;
+  color: $color-text-tertiary;
+}
+
+.versionInfo {
+  text-align: center;
+  padding: 48rpx 0;
+}
+
+.versionText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}

@@ -1,0 +1,33 @@
+@use '@/styles/variables.scss' as *;
+
+.detailPage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $page-padding;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.placeholderIcon {
+  font-size: 120rpx;
+  margin-bottom: 32rpx;
+  opacity: 0.6;
+}
+
+.placeholderTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: 16rpx;
+}
+
+.placeholderText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}

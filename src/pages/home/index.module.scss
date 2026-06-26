@@ -1,0 +1,155 @@
+@use '@/styles/variables.scss' as *;
+
+.homePage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $page-padding;
+  padding-top: 24rpx;
+}
+
+.header {
+  margin-bottom: 32rpx;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin-bottom: 8rpx;
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.uploadSection {
+  margin-bottom: 32rpx;
+}
+
+.resultSection {
+  margin-bottom: 32rpx;
+}
+
+.resultCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 32rpx;
+  box-shadow: $shadow-card;
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+
+.resultTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.confidence {
+  font-size: $font-size-sm;
+  color: $color-success;
+  padding: 8rpx 16rpx;
+  background: rgba(82, 196, 26, 0.1);
+  border-radius: $radius-xs;
+}
+
+.readingValue {
+  font-size: 64rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  margin-bottom: 16rpx;
+  text-align: center;
+}
+
+.readingUnit {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  margin-left: 8rpx;
+}
+
+.resultActions {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 32rpx;
+}
+
+.actionButton {
+  flex: 1;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  border: none;
+
+  @include button-reset;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+}
+
+.secondaryButton {
+  background: $color-bg-page;
+  color: $color-text-primary;
+  border: 1rpx solid $color-border;
+}
+
+.quickActions {
+  display: flex;
+  gap: 24rpx;
+}
+
+.quickActionCard {
+  flex: 1;
+  height: 120rpx;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: 24rpx;
+  box-shadow: $shadow-card;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.quickActionIcon {
+  font-size: 48rpx;
+  margin-right: 16rpx;
+}
+
+.quickActionText {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48rpx;
+}
+
+.loadingText {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  margin-top: 16rpx;
+}

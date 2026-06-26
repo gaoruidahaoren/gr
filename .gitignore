@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Production builds
+dist/
+build/
+
+# Taro specific
+.temp/
+.rn_temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.eslintcache
+.parcel-cache/
+.taro/
+
+# Temporary files
+tmp/
+temp/
+
+# API Keys (敏感信息)
+# 配置文件需提交，但 apiKey 默认应保持为空字符串
+# 实际使用时通过环境变量或本机配置填写
+
+# Preview server
+.trae-cn/

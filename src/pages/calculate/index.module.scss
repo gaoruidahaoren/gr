@@ -1,0 +1,145 @@
+@use '@/styles/variables.scss' as *;
+
+.calculatePage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $page-padding;
+  padding-bottom: 160rpx;
+}
+
+.header {
+  margin-bottom: 24rpx;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-top: 8rpx;
+}
+
+.ruleList {
+  margin-bottom: 24rpx;
+}
+
+.ruleCard {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.ruleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.ruleName {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.ruleBadge {
+  padding: 8rpx 16rpx;
+  background: rgba(22, 119, 255, 0.1);
+  border-radius: $radius-xs;
+}
+
+.ruleBadgeText {
+  font-size: $font-size-xs;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.ruleFormula {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  margin-bottom: 12rpx;
+  font-family: monospace;
+}
+
+.rulePrice {
+  font-size: $font-size-md;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  margin-bottom: 16rpx;
+}
+
+.ruleDescription {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  line-height: $line-height-loose;
+}
+
+.ruleActions {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 24rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid $color-divider;
+}
+
+.actionButton {
+  flex: 1;
+  height: 64rpx;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border: none;
+
+  @include button-reset;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.editButton {
+  background: $color-bg-page;
+  color: $color-text-primary;
+  border: 1rpx solid $color-border;
+}
+
+.deleteButton {
+  background: rgba(245, 63, 63, 0.1);
+  color: $color-error;
+}
+
+.addButton {
+  position: fixed;
+  bottom: 48rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 686rpx;
+  height: $button-height-lg;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  border-radius: $radius-button;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  border: none;
+  box-shadow: $shadow-float;
+
+  @include button-reset;
+
+  &:active {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(0.98);
+  }
+}

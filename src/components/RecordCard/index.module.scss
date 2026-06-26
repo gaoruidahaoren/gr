@@ -1,0 +1,98 @@
+@use '@/styles/variables.scss' as *;
+
+.recordCard {
+  display: flex;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+  box-shadow: $shadow-card;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.recordImage {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: $radius-sm;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+
+.recordContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.recordHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8rpx;
+}
+
+.readingValue {
+  font-size: 36rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.readingUnit {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+  margin-left: 4rpx;
+}
+
+.statusBadge {
+  padding: 8rpx 16rpx;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+}
+
+.statusText {
+  font-weight: $font-weight-medium;
+}
+
+.statusPending {
+  background: rgba(255, 125, 0, 0.1);
+
+  .statusText {
+    color: $color-warning;
+  }
+}
+
+.statusConfirmed {
+  background: rgba(82, 196, 26, 0.1);
+
+  .statusText {
+    color: $color-success;
+  }
+}
+
+.statusExported {
+  background: rgba(22, 119, 255, 0.1);
+
+  .statusText {
+    color: $color-primary;
+  }
+}
+
+.recordTime {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: 4rpx;
+}
+
+.recordNotes {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  @include text-ellipsis;
+}
