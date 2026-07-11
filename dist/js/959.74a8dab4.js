@@ -1,0 +1,1 @@
+"use strict";(self.webpackJsonp=self.webpackJsonp||[]).push([[959],{"5959":function(n,o,e){function loginMock(n){return{"openid":"mock_openid_"+Date.now()}}e.r(o),e.d(o,{"default":function(){return loginMock}})}}]);
