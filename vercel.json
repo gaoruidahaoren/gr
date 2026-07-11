@@ -3,15 +3,15 @@
   "name": "smart-meter-reader",
   "builds": [
     {
-      "src": "dist/**",
-      "use": "@vercel/static"
+      "src": "package.json",
+      "use": "@vercel/static",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
+  "outputDirectory": "dist",
   "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
