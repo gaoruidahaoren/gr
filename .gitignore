@@ -43,9 +43,9 @@ yarn-error.log*
 tmp/
 temp/
 
-# API Keys (敏感信息)
-# 配置文件需提交，但 apiKey 默认应保持为空字符串
-# 实际使用时通过环境变量或本机配置填写
+# Local configuration (API Keys)
+config.local.ts
+config.local.*.ts
 
 # Preview server
 .trae-cn/

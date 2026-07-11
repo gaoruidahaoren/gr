@@ -1890,3 +1890,291 @@
 }
 [11:33:13.851] Update success (pai.updateCloudDev returned)
 [11:33:15.428] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:33:15 AM\n\n","timestamp":1782444795567}
+[11:38:02.866] File change detected. Updating...
+[11:38:02.887] readProjectFiles, Found 82 files to read.
+[11:38:02.936] Files read. Count: 82
+[11:38:02.937] Calling pai.updateCloudDev...
+[11:38:02.940] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:38:03.085] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445083190}
+[11:38:03.086] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445083190}
+[11:38:03.086] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:38:03.086] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:38:03.086] Update success (pai.updateCloudDev returned)
+[11:38:04.709] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:38:04 AM\n\n","timestamp":1782445084812}
+[11:38:14.800] File change detected. Updating...
+[11:38:14.817] readProjectFiles, Found 82 files to read.
+[11:38:14.826] Files read. Count: 82
+[11:38:14.826] Calling pai.updateCloudDev...
+[11:38:14.826] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:38:14.965] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445095069}
+[11:38:14.965] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445095069}
+[11:38:14.965] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:38:14.966] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:38:14.966] Update success (pai.updateCloudDev returned)
+[11:38:16.046] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:38:16 AM\n\n","timestamp":1782445096149}
+[11:39:03.148] File change detected. Updating...
+[11:39:03.164] readProjectFiles, Found 82 files to read.
+[11:39:03.174] Files read. Count: 82
+[11:39:03.174] Calling pai.updateCloudDev...
+[11:39:03.175] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:39:03.318] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445143419}
+[11:39:03.318] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445143419}
+[11:39:03.318] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:39:03.319] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:39:03.319] Update success (pai.updateCloudDev returned)
+[11:39:05.217] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:39:05 AM\n\n","timestamp":1782445145320}
+[11:39:36.821] File change detected. Updating...
+[11:39:36.835] readProjectFiles, Found 82 files to read.
+[11:39:36.845] Files read. Count: 82
+[11:39:36.845] Calling pai.updateCloudDev...
+[11:39:36.846] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:39:36.981] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445177084}
+[11:39:36.981] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445177084}
+[11:39:36.981] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:39:36.981] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:39:36.981] Update success (pai.updateCloudDev returned)
+[11:39:38.763] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:39:38 AM\n\n","timestamp":1782445178867}
+[11:40:03.021] File change detected. Updating...
+[11:40:03.033] readProjectFiles, Found 82 files to read.
+[11:40:03.043] Files read. Count: 82
+[11:40:03.044] Calling pai.updateCloudDev...
+[11:40:03.044] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:40:03.198] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445203301}
+[11:40:03.198] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445203301}
+[11:40:03.198] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:40:03.198] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:40:03.198] Update success (pai.updateCloudDev returned)
+[11:40:04.328] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:40:04 AM\n\n","timestamp":1782445204430}
+[11:41:52.595] File change detected. Updating...
+[11:41:52.612] readProjectFiles, Found 82 files to read.
+[11:41:52.620] Files read. Count: 82
+[11:41:52.620] Calling pai.updateCloudDev...
+[11:41:52.621] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:41:52.770] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445312874}
+[11:41:52.771] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445312874}
+[11:41:52.771] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:41:52.772] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:41:52.772] Update success (pai.updateCloudDev returned)
+[11:41:54.656] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:41:54 AM\n\n","timestamp":1782445314759}
+[11:43:32.154] File change detected. Updating...
+[11:43:32.173] readProjectFiles, Found 82 files to read.
+[11:43:32.185] Files read. Count: 82
+[11:43:32.185] Calling pai.updateCloudDev...
+[11:43:32.186] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:43:32.329] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445412432}
+[11:43:32.330] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445412432}
+[11:43:32.333] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:43:32.335] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:43:32.335] Update success (pai.updateCloudDev returned)
+[11:43:33.568] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:43:33 AM\n\n","timestamp":1782445413670}
+[11:43:40.183] File change detected. Updating...
+[11:43:40.191] readProjectFiles, Found 82 files to read.
+[11:43:40.200] Files read. Count: 82
+[11:43:40.200] Calling pai.updateCloudDev...
+[11:43:40.200] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:43:40.335] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445420437}
+[11:43:40.335] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445420437}
+[11:43:40.335] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:43:40.335] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:43:40.335] Update success (pai.updateCloudDev returned)
+[11:43:41.442] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:43:41 AM\n\n","timestamp":1782445421544}
+[11:43:53.852] File change detected. Updating...
+[11:43:53.871] readProjectFiles, Found 82 files to read.
+[11:43:53.880] Files read. Count: 82
+[11:43:53.881] Calling pai.updateCloudDev...
+[11:43:53.881] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:43:54.020] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445434122}
+[11:43:54.021] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445434122}
+[11:43:54.021] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:43:54.022] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:43:54.022] Update success (pai.updateCloudDev returned)
+[11:43:55.034] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:43:55 AM\n\n","timestamp":1782445435136}
+[11:44:21.462] File change detected. Updating...
+[11:44:21.476] readProjectFiles, Found 82 files to read.
+[11:44:21.486] Files read. Count: 82
+[11:44:21.486] Calling pai.updateCloudDev...
+[11:44:21.487] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:44:21.624] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445461726}
+[11:44:21.625] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445461726}
+[11:44:21.625] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:44:21.626] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:44:21.626] Update success (pai.updateCloudDev returned)
+[11:44:23.090] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:44:23 AM\n\n","timestamp":1782445463192}
+[11:44:56.299] File change detected. Updating...
+[11:44:56.316] readProjectFiles, Found 82 files to read.
+[11:44:56.328] Files read. Count: 82
+[11:44:56.329] Calling pai.updateCloudDev...
+[11:44:56.333] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:44:56.477] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445496579}
+[11:44:56.478] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445496579}
+[11:44:56.478] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:44:56.478] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:44:56.478] Update success (pai.updateCloudDev returned)
+[11:44:58.976] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:44:59 AM\n\n","timestamp":1782445499074}
+[11:45:09.759] File change detected. Updating...
+[11:45:09.781] readProjectFiles, Found 82 files to read.
+[11:45:09.792] Files read. Count: 82
+[11:45:09.792] Calling pai.updateCloudDev...
+[11:45:09.793] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:45:09.945] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445510040}
+[11:45:09.945] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445510040}
+[11:45:09.945] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:45:09.945] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:45:09.946] Update success (pai.updateCloudDev returned)
+[11:45:11.314] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:45:11 AM\n\n","timestamp":1782445511416}
+[11:45:20.848] File change detected. Updating...
+[11:45:20.861] readProjectFiles, Found 82 files to read.
+[11:45:20.870] Files read. Count: 82
+[11:45:20.870] Calling pai.updateCloudDev...
+[11:45:20.871] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:45:21.009] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445521111}
+[11:45:21.009] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445521111}
+[11:45:21.009] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:45:21.009] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:45:21.009] Update success (pai.updateCloudDev returned)
+[11:45:22.109] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:45:22 AM\n\n","timestamp":1782445522211}
+[11:45:43.933] File change detected. Updating...
+[11:45:43.941] readProjectFiles, Found 82 files to read.
+[11:45:43.954] Files read. Count: 82
+[11:45:43.954] Calling pai.updateCloudDev...
+[11:45:43.955] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:45:44.120] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445544222}
+[11:45:44.120] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445544222}
+[11:45:44.121] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:45:44.121] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:45:44.121] Update success (pai.updateCloudDev returned)
+[11:45:45.314] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:45:45 AM\n\n","timestamp":1782445545415}
+[11:46:01.090] File change detected. Updating...
+[11:46:01.109] readProjectFiles, Found 82 files to read.
+[11:46:01.117] Files read. Count: 82
+[11:46:01.117] Calling pai.updateCloudDev...
+[11:46:01.118] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:46:01.266] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445561367}
+[11:46:01.266] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445561367}
+[11:46:01.266] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:46:01.266] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:46:01.266] Update success (pai.updateCloudDev returned)
+[11:46:02.318] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:46:02 AM\n\n","timestamp":1782445562420}
+[11:46:20.781] File change detected. Updating...
+[11:46:20.797] readProjectFiles, Found 82 files to read.
+[11:46:20.806] Files read. Count: 82
+[11:46:20.806] Calling pai.updateCloudDev...
+[11:46:20.807] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:46:20.955] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445581056}
+[11:46:20.955] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445581056}
+[11:46:20.955] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:46:20.955] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:46:20.955] Update success (pai.updateCloudDev returned)
+[11:46:22.457] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:46:22 AM\n\n","timestamp":1782445582558}
+[11:46:24.317] File change detected. Updating...
+[11:46:24.331] readProjectFiles, Found 82 files to read.
+[11:46:24.341] Files read. Count: 82
+[11:46:24.341] Calling pai.updateCloudDev...
+[11:46:24.342] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:46:24.552] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445584653}
+[11:46:24.553] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445584653}
+[11:46:24.553] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:46:24.553] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:46:24.554] Update success (pai.updateCloudDev returned)
+[11:46:25.500] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:46:25 AM\n\n","timestamp":1782445585602}
+[11:46:44.487] File change detected. Updating...
+[11:46:44.500] readProjectFiles, Found 82 files to read.
+[11:46:44.508] Files read. Count: 82
+[11:46:44.508] Calling pai.updateCloudDev...
+[11:46:44.509] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:46:44.643] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445604744}
+[11:46:44.643] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445604744}
+[11:46:44.644] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:46:44.644] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:46:44.645] Update success (pai.updateCloudDev returned)
+[11:46:45.744] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:46:45 AM\n\n","timestamp":1782445605845}
+[11:47:30.667] File change detected. Updating...
+[11:47:30.676] readProjectFiles, Found 82 files to read.
+[11:47:30.684] Files read. Count: 82
+[11:47:30.684] Calling pai.updateCloudDev...
+[11:47:30.685] [PAI SDK] cloudServer.update called, appId: pai-preview-trae-2f512d63
+[11:47:30.826] [PAI SDK] Received event: reload {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445650928}
+[11:47:30.827] [PAI SDK] CloudServer received reload event: {"url":"aipa://pai-preview-trae-2f512d63.aipa-cloud.bytedance.net?type=pai","timestamp":1782445650928}
+[11:47:30.827] [PAI SDK] reload, url = https://sd62opo6oqou1ckhsuo00.apigateway-cn-beijing.volceapi.com/?faasInstanceName=vefaas-f0vkicge-38hai6w31d-d8uv068290l50kb8l46g-sandbox&hash=pai-preview-trae-2f512d63
+[11:47:30.827] [PAI SDK] cloudServer.update response: {
+  "status": "running",
+  "reload": false,
+  "hash": "pai-preview-trae-2f512d63"
+}
+[11:47:30.827] Update success (pai.updateCloudDev returned)
+[11:47:33.021] [PAI SDK] Received event: log {"content":"✅  编译成功 6/26/2026, 11:47:33 AM\n\n","timestamp":1782445653122}
+[12:00:11.478] Heartbeat timeout.
+[12:00:11.486] Shutting down...
+[12:00:11.488] Stopping Cloud Dev...

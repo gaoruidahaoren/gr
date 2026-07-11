@@ -5,22 +5,33 @@ import classnames from 'classnames';
 import styles from './index.module.scss';
 
 interface UploadCardProps {
-  imageUrl?: string;
-  onUpload: (imageUrl: string) => void;
+  imageUrls?: string[];
+  onUpload: (imageUrls: string[]) => void;
+  onRemove?: (index: number) => void;
   loading?: boolean;
+  meterType?: 'water' | 'electric';
 }
 
-const UploadCard: React.FC<UploadCardProps> = ({ imageUrl, onUpload, loading }) => {
+const UploadCard: React.FC<UploadCardProps> = ({ imageUrls = [], onUpload, onRemove, loading, meterType = 'water' }) => {
   const handleChooseImage = async () => {
     try {
+      const maxCount = 9 - imageUrls.length;
+      if (maxCount <= 0) {
+        Taro.showToast({
+          title: '最多选择9张图片',
+          icon: 'none',
+        });
+        return;
+      }
+
       const res = await Taro.chooseImage({
-        count: 1,
+        count: maxCount,
         sizeType: ['compressed'],
         sourceType: ['album', 'camera'],
       });
 
       if (res.tempFilePaths && res.tempFilePaths.length > 0) {
-        onUpload(res.tempFilePaths[0]);
+        onUpload([...imageUrls, ...res.tempFilePaths]);
       }
     } catch (error) {
       console.error('[UploadCard] 选择图片失败:', error);
@@ -31,29 +42,43 @@ const UploadCard: React.FC<UploadCardProps> = ({ imageUrl, onUpload, loading }) 
     }
   };
 
+  const handleRemoveImage = (index: number) => {
+    if (onRemove) {
+      onRemove(index);
+    }
+  };
+
   return (
     <View className={styles.uploadCard}>
-      {imageUrl ? (
-        <View className={styles.previewContainer}>
-          <Image
-            src={imageUrl}
-            mode="aspectFill"
-            className={styles.previewImage}
-            onError={() => {
-              console.error('[UploadCard] 图片加载失败');
-              Taro.showToast({
-                title: '图片加载失败',
-                icon: 'none',
-              });
-            }}
-          />
-          {!loading && (
-            <Button
-              className={styles.reuploadButton}
+      {imageUrls.length > 0 ? (
+        <View className={styles.previewGrid}>
+          {imageUrls.map((url, index) => (
+            <View key={index} className={styles.previewItem}>
+              <Image
+                src={url}
+                mode="aspectFill"
+                className={styles.previewImage}
+                onError={() => {
+                  console.error('[UploadCard] 图片加载失败');
+                }}
+              />
+              {!loading && (
+                <Button
+                  className={styles.removeButton}
+                  onClick={() => handleRemoveImage(index)}
+                >
+                  ×
+                </Button>
+              )}
+            </View>
+          ))}
+          {imageUrls.length < 9 && !loading && (
+            <View
+              className={styles.addMoreButton}
               onClick={handleChooseImage}
             >
-              重新选择
-            </Button>
+              <Text className={styles.addIcon}>+</Text>
+            </View>
           )}
         </View>
       ) : (
@@ -65,9 +90,9 @@ const UploadCard: React.FC<UploadCardProps> = ({ imageUrl, onUpload, loading }) 
             <Text className={styles.cameraIcon}>📷</Text>
           </View>
           <Text className={styles.uploadText}>
-            {loading ? '识别中...' : '点击上传水表照片'}
+            {loading ? '识别中...' : `点击上传${meterType === 'water' ? '水表' : '电表'}照片`}
           </Text>
-          <Text className={styles.uploadHint}>支持相册选择或拍照</Text>
+          <Text className={styles.uploadHint}>支持相册选择或拍照，最多9张</Text>
         </View>
       )}
     </View>

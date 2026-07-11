@@ -6,9 +6,9 @@ exports.main = async (event, context) => {
   try {
     const wxContext = cloud.getWXContext()
     const openid = wxContext.OPENID
-    const { imageUrl, reading, confidence, location, notes, status = 'pending' } = event
+    const { imageUrl, reading, confidence, meterType = 'water', meterNumber, location, notes, status = 'pending' } = event
 
-    console.log('[createMeterRecord] openid:', openid, 'reading:', reading)
+    console.log('[createMeterRecord] openid:', openid, 'reading:', reading, 'meterType:', meterType)
 
     // 创建记录
     const result = await db.collection('meter_records').add({
@@ -17,6 +17,8 @@ exports.main = async (event, context) => {
         imageUrl,
         reading,
         confidence,
+        meterType,
+        meterNumber: meterNumber || '',
         timestamp: db.serverDate(),
         location: location || '',
         notes: notes || '',

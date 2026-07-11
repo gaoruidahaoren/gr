@@ -3,14 +3,14 @@ import { View, Text, Image } from '@tarojs/components';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 import type { MeterRecord } from '@/types/meter';
+import { meterTypeLabels, meterUnitLabels } from '@/config/prompt';
 
 interface RecordCardProps {
   record: MeterRecord;
   onClick: () => void;
-  onDelete?: () => void;
 }
 
-const RecordCard: React.FC<RecordCardProps> = ({ record, onClick, onDelete }) => {
+const RecordCard: React.FC<RecordCardProps> = ({ record, onClick }) => {
   const formatDate = (timestamp: number) => {
     const date = new Date(timestamp);
     const year = date.getFullYear();
@@ -61,12 +61,20 @@ const RecordCard: React.FC<RecordCardProps> = ({ record, onClick, onDelete }) =>
         <View className={styles.recordHeader}>
           <Text className={styles.readingValue}>
             {record.reading}
-            <Text className={styles.readingUnit}>m³</Text>
+            <Text className={styles.readingUnit}>{meterUnitLabels[record.meterType]}</Text>
           </Text>
           <View className={classnames(styles.statusBadge, getStatusClass(record.status))}>
             <Text className={styles.statusText}>{getStatusText(record.status)}</Text>
           </View>
         </View>
+        
+        <View className={styles.recordMeta}>
+          <Text className={styles.meterType}>{meterTypeLabels[record.meterType]}</Text>
+          {record.meterNumber && (
+            <Text className={styles.meterNumber}>| {record.meterNumber}</Text>
+          )}
+        </View>
+        
         <Text className={styles.recordTime}>{formatDate(record.timestamp)}</Text>
         {record.notes && (
           <Text className={styles.recordNotes}>{record.notes}</Text>

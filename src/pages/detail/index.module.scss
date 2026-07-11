@@ -4,6 +4,138 @@
   min-height: 100vh;
   background: $color-bg-page;
   padding: $page-padding;
+  padding-top: 32rpx;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36rpx;
+  padding: 0 8rpx;
+}
+
+.backButton {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: $radius-round;
+  background: $color-bg-card;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: $shadow-sm;
+  transition: all $transition-base;
+
+  @include button-reset;
+
+  &:active {
+    transform: scale(0.95);
+    background: $color-bg-hover;
+  }
+}
+
+.backIcon {
+  font-size: $font-size-xl;
+  color: $color-text-primary;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: -0.5rpx;
+}
+
+.statusBadge {
+  padding: 12rpx 24rpx;
+  border-radius: $radius-button;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.statusText {
+  font-size: $font-size-sm;
+  color: $color-success;
+  font-weight: $font-weight-medium;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+}
+
+.imageContainer {
+  @include card-base;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  box-shadow: $shadow-card-hover;
+}
+
+.recordImage {
+  width: 100%;
+  display: block;
+}
+
+.infoCard {
+  @include card-base;
+  padding: 36rpx;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid $color-border-light;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.infoLabel {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.infoValue {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.readingNum {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  letter-spacing: -1rpx;
+}
+
+.readingUnit {
+  font-size: $font-size-lg;
+  color: $color-text-tertiary;
+  margin-left: 8rpx;
+  font-weight: $font-weight-normal;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.loadingText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+  margin-top: 20rpx;
 }
 
 .placeholder {
@@ -15,16 +147,23 @@
 }
 
 .placeholderIcon {
-  font-size: 120rpx;
-  margin-bottom: 32rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72rpx;
+  margin-bottom: 36rpx;
   opacity: 0.6;
 }
 
 .placeholderTitle {
   font-size: $font-size-lg;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-semibold;
   color: $color-text-primary;
-  margin-bottom: 16rpx;
+  margin-bottom: 12rpx;
 }
 
 .placeholderText {

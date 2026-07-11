@@ -2,24 +2,272 @@
 
 .recordsPage {
   min-height: 100vh;
-  background: $color-bg-page;
-  padding: $page-padding;
+  background: #f8fafc;
 }
 
-.header {
-  margin-bottom: 24rpx;
+// 顶部背景
+.headerBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400rpx;
+  background: linear-gradient(160deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  border-radius: 0 0 80rpx 80rpx;
 }
 
-.title {
-  font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
+// 头部内容
+.headerContent {
+  position: relative;
+  z-index: 1;
+  padding: 48rpx 36rpx 60rpx;
 }
 
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageTitle {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.headerIcon {
+  font-size: 48rpx;
+}
+
+// 统计卡片
+.statsRow {
+  display: flex;
+  gap: 16rpx;
+}
+
+.statItem {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 20rpx;
+  padding: 20rpx 16rpx;
+  text-align: center;
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.statValue {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4rpx;
+}
+
+.statLabel {
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+// 内容区
+.contentSection {
+  position: relative;
+  z-index: 2;
+  padding: 0 32rpx 160rpx;
+  margin-top: -32rpx;
+}
+
+// 筛选标签
+.filterBar {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 28rpx;
+}
+
+.filterTag {
+  padding: 12rpx 24rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  background: #ffffff;
+  color: #64748b;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+
+  &.active {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
+    box-shadow: 0 4rpx 16rpx rgba(99, 102, 241, 0.3);
+  }
+}
+
+// 记录列表
 .recordList {
-  min-height: calc(100vh - 200rpx);
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
 }
 
-.recordItem {
+.recordCard {
+  background: #ffffff;
+  border-radius: 24rpx;
+  padding: 24rpx;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.04);
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.recordTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.recordType {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.typeIcon {
+  font-size: 28rpx;
+}
+
+.typeName {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.recordTime {
+  font-size: 22rpx;
+  color: #94a3b8;
+}
+
+.recordBody {
+  display: flex;
+  gap: 20rpx;
+}
+
+.recordImage {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 16rpx;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.recordInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoLabel {
+  font-size: 24rpx;
+  color: #94a3b8;
+}
+
+.infoValue {
+  font-size: 28rpx;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.readingBig {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.meterNum {
+  font-size: 22rpx;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.recordFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid #f1f5f9;
+}
+
+.statusBadge {
+  font-size: 20rpx;
+  padding: 6rpx 12rpx;
+  border-radius: 999rpx;
+  font-weight: 500;
+
+  &.confirmed {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+
+  &.pending {
+    background: #fef3c7;
+    color: #d97706;
+  }
+
+  &.exported {
+    background: #e0e7ff;
+    color: #4f46e5;
+  }
+}
+
+.confidence {
+  font-size: 22rpx;
+  color: #94a3b8;
+}
+
+// 空状态
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120rpx 60rpx;
+}
+
+.emptyIcon {
+  font-size: 80rpx;
   margin-bottom: 24rpx;
+}
+
+.emptyTitle {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12rpx;
+}
+
+.emptyDesc {
+  font-size: 26rpx;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 32rpx;
+}
+
+.uploadBtn {
+  font-size: 28rpx;
+  color: #6366f1;
+  background: #eef2ff;
+  padding: 16rpx 40rpx;
+  border-radius: 999rpx;
+  font-weight: 500;
 }

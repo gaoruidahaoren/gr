@@ -1,8 +1,5 @@
-// 水表相关类型定义
+export type MeterType = 'water' | 'electric';
 
-/**
- * 水表读数记录（云数据库）
- */
 export interface MeterRecord {
   _id: string;
   _openid: string;
@@ -10,38 +7,23 @@ export interface MeterRecord {
   reading: number;
   confidence: number;
   timestamp: number;
+  meterType: MeterType;
+  meterNumber?: string;
+  parentMeterNumber?: string;  // 父表表号
   location?: string;
   notes?: string;
   status: 'pending' | 'confirmed' | 'exported';
 }
 
-/**
- * 识别结果
- */
 export interface RecognitionResult {
   reading: number;
   confidence: number;
+  meterType: MeterType;
+  meterNumber?: string;
   success: boolean;
   message?: string;
 }
 
-/**
- * 计算规则（云数据库）
- */
-export interface CalculationRule {
-  _id: string;
-  _openid: string;
-  name: string;
-  formula: string;
-  unitPrice: number;
-  description: string;
-  isDefault: boolean;
-  createdAt: number;
-}
-
-/**
- * 导出配置
- */
 export interface ExportConfig {
   format: 'excel' | 'csv';
   includeFields: string[];
@@ -49,4 +31,35 @@ export interface ExportConfig {
     start: number;
     end: number;
   };
+}
+
+// 计算相关类型
+export interface MeterDifference {
+  meterNumber: string;
+  meterType: MeterType;
+  startDate: string;
+  endDate: string;
+  startReading: number;
+  endReading: number;
+  difference: number;
+  unit: string;
+}
+
+export interface MeterSummary {
+  date: string;
+  parentMeter: string;
+  childMeters: {
+    meterNumber: string;
+    reading: number;
+  }[];
+  totalReading: number;
+  difference: number;
+  unit: string;
+}
+
+export interface CalculationResult {
+  differences: MeterDifference[];
+  summaries: MeterSummary[];
+  totalConsumption: number;
+  unit: string;
 }
