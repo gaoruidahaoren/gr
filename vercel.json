@@ -2,6 +2,8 @@
   "version": 2,
   "name": "smart-meter-reader",
   "outputDirectory": "dist",
+  "installCommand": "echo 'Skip install'",
+  "buildCommand": "echo 'Skip build'",
   "routes": [
     {
       "handle": "filesystem"
